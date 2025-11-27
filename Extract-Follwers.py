@@ -1,3 +1,4 @@
+#!/usr/bin/python3.9
 from bs4 import BeautifulSoup
 
 with open('followers_1.html', 'r') as html_file:
