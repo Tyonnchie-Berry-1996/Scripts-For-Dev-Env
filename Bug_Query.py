@@ -43,7 +43,7 @@ def product_finder():
 
 def bugz_finder():
     try:
-        expanded_path = os.path.expandvars('/root/.bashrc')
+        expanded_path = os.path.expandvars('$HOME/.bashrc')
 
         result = subprocess.run(
             ['bash', '-c', f'source {expanded_path} && echo $BUGZILLA_API_KEY'],
