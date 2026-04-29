@@ -66,6 +66,8 @@ def bugz_finder():
             user_key = subprocess.check_output(["cat", api_key_file], text=True).strip()
             api_key = user_key
 
+            subprocess.run(["clear"])
+
 
         URL = "bugzilla.redhat.com/"
 
