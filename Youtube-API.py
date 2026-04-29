@@ -7,8 +7,7 @@ import subprocess
 def api_call():
     try:
         expanded_path = os.path.expandvars('$HOME/.bashrc')
-        home_base = os.environ['HOME']
-
+        
         temp_api = subprocess.run(
             ['bash', '-c', f'source {expanded_path} && echo $YOUTUBE_API_KEY'],
             capture_output=True,
@@ -20,7 +19,7 @@ def api_call():
             print("API key set from bashrc\n")
 
         if api_key == "":
-            api_key_temp = f"{home_base}/src/API-Scripts/temp-holder.txt"
+            api_key_temp = "/home/src/API-Scripts/temp-holder.txt"
             print("No API key found, setting temporary placeholder.")
 
             input_user = input("\nCopy and paste your Youtube API key\n ")
@@ -42,10 +41,10 @@ def api_call():
             print("API key set from bashrc\n")
 
         if yt_id == "":
-            chan_id_temp = f"{home_base}/src/API-Scripts/temp-id-holder.txt"
-            print("No API key found, setting temporary placeholder.")
+            chan_id_temp = f"/home/src/Scripts-For-Dev-Env/temp-id-holder.txt"
+            print("No channel key found, setting temporary placeholder.")
 
-            input_user = input("\nCopy and paste your Youtube API key\n ")
+            input_user = input("\nCopy and paste your Youtube channel id\n ")
 
             subprocess.run([f"echo {input_user} > {chan_id_temp}"], shell=True, check=True)
             user_id = subprocess.check_output(["cat", chan_id_temp], text=True).strip()
