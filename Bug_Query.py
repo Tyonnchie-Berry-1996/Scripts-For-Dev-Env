@@ -90,12 +90,11 @@ def bugz_finder():
 
             print(bugs[i], "\n", link, "\n")
 
-        temp_file = f"/home/src/API-Scripts/temp-holder.txt"
+        temp_file = f"/home/src/Scripts-For-Dev-Env/temp-holder.txt"
         if len(str(temp_file)) > 0:
             with open(temp_file, 'w') as f:
                 f.write('')
-                os.remove(temp_file)
-                
+                  
     except IndexError:
         pass
 
