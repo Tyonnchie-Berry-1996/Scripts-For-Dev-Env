@@ -19,7 +19,7 @@ def api_call():
             print("API key set from bashrc\n")
 
         if api_key == "":
-            api_key_temp = "/home/src/API-Scripts/temp-holder.txt"
+            api_key_temp = "/home/src/Scripts-For-Dev-Env/temp-holder.txt"
             print("No API key found, setting temporary placeholder.")
 
             input_user = input("\nCopy and paste your Youtube API key\n ")
