@@ -58,15 +58,18 @@ def api_call():
 
         ).execute()
 
+        subprocess.run(["clear"])
+
         stats = response['items'][0]['statistics']
 
         subscriber_count = stats.get('subscriberCount', 'Unknown')
         video_count = stats.get('videoCount', 'Unknown')
         view_count = stats.get('viewCount', 'Unknown')
 
+        print("Authentication verified and successful\n")
         print("Subscribers:", int(subscriber_count))
         print("Videos on channel:", int(video_count))
-        print("Total Views:", int(view_count))
+        print("Total Views:", int(view_count), "\n")
 
         temp = "/home/src/Scripts-For-Dev-Env/temp-holder.txt"
         tempfile = "/home/src/Scripts-For-Dev-Env/temp-id-holder.txt"
