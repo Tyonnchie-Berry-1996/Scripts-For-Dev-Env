@@ -57,10 +57,12 @@ def bugz_finder():
             print("API key set from bashrc\n")
 
         if api_key == "":
-            api_key_file = "/home/src/API-Scripts/temp-holder.txt"
-            print("No API key found, setting temporary placeholder.")
-            input_user = input("\nCopy and paste your open API key\n ")
-            set_key = subprocess.run([f"echo {input_user} > {api_key_file}"], shell=True, check=True)
+            api_key_file = "/home/src/Scripts-For-Dev-Env/temp-holder.txt"
+            print("\nNo API key found, setting temporary placeholder.")
+            
+            input_user = input("\nCopy and paste your Bugzilla API key\n ")
+            subprocess.run([f"echo {input_user} > {api_key_file}"], shell=True, check=True)
+            
             user_key = subprocess.check_output(["cat", api_key_file], text=True).strip()
             api_key = user_key
 
