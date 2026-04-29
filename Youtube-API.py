@@ -42,7 +42,7 @@ def api_call():
 
         if yt_id == "":
             chan_id_temp = f"/home/src/Scripts-For-Dev-Env/temp-id-holder.txt"
-            print("No channel key found, setting temporary placeholder.")
+            print("\nNo channel key found, setting temporary placeholder.")
 
             input_user = input("\nCopy and paste your Youtube channel id\n ")
 
