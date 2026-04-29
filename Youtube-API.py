@@ -68,10 +68,22 @@ def api_call():
         print("Videos on channel:", int(video_count))
         print("Total Views:", int(view_count))
 
+        temp = "/home/src/Scripts-For-Dev-Env/temp-holder.txt"
+        tempfile = "/home/src/Scripts-For-Dev-Env/temp-id-holder.txt"
+        
+        if len(str(temp)) > 0:
+            with open(temp, 'w') as f:
+                f.write('')
+
+        if len(str(tempfile)) > 0:
+            with open(tempfile, 'w') as f:
+                f.write('')
+
     except IndexError:
         pass
 
 
 if __name__ == '__main__':
     api_call()
+    
     
