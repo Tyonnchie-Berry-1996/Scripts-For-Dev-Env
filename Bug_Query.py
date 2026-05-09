@@ -10,37 +10,6 @@ import requests
 urllib3.PoolManager(cert_reqs='CERT_REQUIRED', ca_certs="/etc/ssl/certs/ca-bundle.trust.crt")
 
 
-def product_finder():
-    try:
-        URL = "bugzilla.redhat.com/"
-
-        r = requests.get(f"http://{URL}/rest/product_selectable")
-
-        data_set = r.json()
-
-        json_id = json.dumps(data_set, indent=2)
-
-        with open('id_advisories.json', 'w') as e:
-            e.write(json_id)
-
-        with open("id_advisories.json", 'r') as e:
-            id_object = json.loads(e.read())
-
-        for x in range(0, id_object):
-            product_id = id_object['ids'][x]
-
-            r = requests.get(f"http://{URL}rest/product/{product_id}")
-
-            new_set = r.json()
-
-            json_id = json.dumps(new_set, indent=2)
-
-            print(json_id)
-
-    except IndexError:
-        pass
-
-
 def bugz_finder():
     try:
         expanded_path = os.path.expandvars('$HOME/.bashrc')
